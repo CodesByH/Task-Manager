@@ -5,10 +5,11 @@ public class Task {
     String name;
     String description;
     Date dueDate;
-    boolean priority;
+    //Priority levels are: critical, high priority, neutral, low priority, unknown 
+    String priority;
 
     //Constructor
-    public Task(String name, String description, Date dueDate, boolean priority) {
+    public Task(String name, String description, Date dueDate, String priority) {
         this.name = name;
         this.description = description;
         this.dueDate = dueDate;
@@ -33,7 +34,7 @@ public class Task {
     }
 
     //Get Priority Boolean
-    public boolean getPriority() {
+    public String getPriority() {
         return this.priority;
     }
 
@@ -51,7 +52,7 @@ public class Task {
         this.dueDate = d;
     }
 
-    public void setPriority(boolean p) {
+    public void setPriority(String p) {
         this.priority = p;
     }
 

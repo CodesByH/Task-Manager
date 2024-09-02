@@ -4,24 +4,34 @@ import java.util.Date;
 public class TaskManager {
     
     //ArrayList to store tasks
-    ArrayList<Task> Tasks = new ArrayList<>();
+    ArrayList<Task> tasks = new ArrayList<>();
 
     //Basic CRUD Operations:
     //Add Tasks to List
     public void addTask(Task t) {
-        Tasks.add(t);
+        tasks.add(t);
     }
 
     //Update tasks
-    public void updateTask(Task t, String n, String d, Date dd, boolean p) {
+    public void updateTaskName(Task t, String n) {
         t.setName(n);
+    }
+    public void updateTaskDes(Task t, String d) {
         t.setDescription(d);
+    }
+    public void updateTaskDD(Task t, Date dd) {
         t.setDate(dd);
+    }
+    public void updateTaskPriority(Task t, String p) {
         t.setPriority(p);
     }
 
     //Delete Tasks
-    
+    public void deleteTask(Task t) {
+        if(tasks.contains(t)) {
+            tasks.remove(t);
+        }
+    }
 
-    
+
 }//End Class
