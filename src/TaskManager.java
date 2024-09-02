@@ -13,15 +13,15 @@ public class TaskManager {
     }
 
     //Update tasks
-    public void updateTaskName(Task t, String n) {
-        t.name = n;
+    public void updateTask(Task t, String n, String d, Date dd, boolean p) {
+        t.setName(n);
+        t.setDescription(d);
+        t.setDate(dd);
+        t.setPriority(p);
     }
 
-    public void updateTaskDescription(Task t, String d) {
-        t.description = d;
-    }
+    //Delete Tasks
+    
 
-    public void updateTaskDueDate(Task t, Date dd) {
-        t.dueDate = dd;
-    }
+    
 }//End Class
