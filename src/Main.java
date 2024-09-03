@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.time.LocalDate;
 
 public class Main {
     
@@ -8,44 +9,35 @@ public class Main {
 
     public static void main(String[] args) {
         
-        Task t1 = new Task("Dentist", "Appointment at 12:00", new Date(2024-07-2), "High");
-        Task t2 = new Task("Barber", "Trim at 14:20", new Date(2024-07-12), "Neutral");
-        Task t3 = new Task("Interview", "Meeting with new boss at 16:30", new Date(2024-07-14), "Critical");
+        Task t1 = new Task(1, "Dentist", "Appointment at 12:00", LocalDate.of(2024, 7, 2), "High");
+        Task t2 = new Task(2, "Barber", "Trim at 14:20", LocalDate.of(2024, 7, 12), "Neutral");
+        Task t3 = new Task(3, "Interview", "Meeting with new boss at 16:30", LocalDate.of(2024, 7, 9), "Critical");
        
         taskMang.addTask(t1);
         taskMang.addTask(t2);
         taskMang.addTask(t3);
 
+        //List tasks check
+        taskMang.listTasks();
+        System.out.println();
+
         //Add task method check
-        System.out.println(".addTask() method test");
-        for (Task t : taskMang.tasks) {
-            System.out.println("Priority Level: " + t.getPriority() + " " 
-            + t.getName() + ": " 
-            + t.getDescription() + " ");
-        }
+        Task t4 = new Task(4, "Exam Prep", "Prep for DSA exam", LocalDate.of(2024, 7, 12), "High");
+        taskMang.addTask(t4);
+        System.out.println("ADD Method check \n");
+        taskMang.listTasks();
         System.out.println();
 
         //Update Method check
-        System.out.println(".updateTask() method test");
-        taskMang.updateTaskName(t2, "Hairdresser");
-        for (Task t : taskMang.tasks) {
-            System.out.println("Priority Level: " + t.getPriority() + " " 
-            + t.getName() + ": " 
-            + t.getDescription() + " ");
-        }
+        taskMang.updateTaskDes(t4, "DO NOT PREP for DSA Exam");
+        System.out.println("UPDATE Method check \n");
+        taskMang.listTasks();
         System.out.println();
 
         //Delete method check
-        System.out.println(".deleteTask() method test");
-        taskMang.deleteTask(t2);
-        for (Task t : taskMang.tasks) {
-            System.out.println("Priority Level: " + t.getPriority() + " " 
-            + t.getName() + ": " 
-            + t.getDescription() + " ");
-        }
+        taskMang.deleteTask(t4);
+        System.out.println("DELETE Method check \n");
+        taskMang.listTasks();
 
-    
-
-    }
-    
-}
+    }//End Main
+}//End class
