@@ -8,15 +8,17 @@ public class Task {
     String description;
     LocalDate dueDate;
     //Priority levels are: critical, high priority, neutral, low priority, unknown 
-    String priority;
+    Priority priority;
+    boolean comp;
 
     //Constructor
-    public Task(int taskNo, String name, String description, LocalDate dueDate, String priority) {
+    public Task(int taskNo, String name, String description, LocalDate dueDate, Priority priority, boolean comp) {
         this.taskNo = taskNo;
         this.name = name;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.comp = comp;
     }//End Constructor
 
 
@@ -43,8 +45,13 @@ public class Task {
     }
 
     //Get Priority Boolean
-    public String getPriority() {
+    public Priority getPriority() {
         return this.priority;
+    }
+
+    //Get Completed Bool
+    public boolean getCompleted() {
+        return this.comp;
     }
 
     //Setters
@@ -65,8 +72,12 @@ public class Task {
         this.dueDate = d;
     }
 
-    public void setPriority(String p) {
+    public void setPriority(Priority p) {
         this.priority = p;
+    }
+
+    public void setCompStatus(boolean c) {
+        this.comp = c;
     }
 
 }//End Class
